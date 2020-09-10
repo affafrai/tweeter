@@ -18,8 +18,34 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ html {
+  font-family: sans-serif;
+ }
+  body {
+  font-family: 'Source Sans Pro';
+  margin-top: 120px
+ }
+ nav {
+  font-family: 'Bungee', cursive;
+padding: 50px ;
+ }
+
+ main {
+   width: 90%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-color:  #f4f1ec;
+   margin: 0 auto; 
+  }
+
+.red{
+  color: red;
+}
