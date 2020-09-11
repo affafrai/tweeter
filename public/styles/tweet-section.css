@@ -30,9 +30,7 @@ margin: 50px;
  justify-content: space-between;
 border-top: solid;
 }
-.tweets-section article header div[0]{
 
-}
 .tweets-section article:hover {
   box-shadow: 5px 5px;
 font-weight: 700;

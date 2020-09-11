@@ -18,7 +18,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <!-- icons -->
+    <!-- icons -->
     <script src="https://kit.fontawesome.com/b8f8382d1d.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -36,8 +36,13 @@
     <main class="container">
       <!-- tweet input section -->
       <section class="new-tweet">
+
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets" >
+        <div id="error-msg" hidden>
+          <i class="fa fa-times-circle"></i>
+          Replace this text with your own text.
+       </div>
+        <form method="POST" action="/tweets" id="tweet-submit">
           <textarea name="text" id="tweet-text"  placeholder="What are you humming about?"></textarea>
           <div class="char-counter">
             <button type="submit">Tweet</button>
@@ -45,31 +50,8 @@
           </div>
         </form>
         <!-- tweet showing section -->
-        <section class="tweets-section">
-          <article>
-            <header>
-              <div>
-                <i class="fas fa-user-circle"></i>
-                 Newton
-              </div>
-              <div class="account-name">
-                  @SjrIsaak
-              </div>
-            </header>
-            <h5>
-              this is the article
-            </h5>
-            <footer>
-              <div>
-                  <h6>10 days ago</h6> 
-              </div>
-              <div>
-                <i class="far fa-heart"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="far fa-flag"></i>
-              </div>
-            </footer>
-          </article>
+        <section class="tweets-section" id="tweets-container">
+          
         </section>
       </section>
     </main>
