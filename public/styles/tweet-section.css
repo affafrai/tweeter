@@ -1,15 +1,12 @@
 .tweet-section{
-  
   width: 100%;
-  
 }
-
 
 .section.tweet-section{
   border: black;
- display: flex;
+  display: flex;
   color: cyan;
-margin: 50px;
+  margin: 50px;
 }
 
 .tweets-section article{
@@ -20,24 +17,24 @@ margin: 50px;
 
 .tweets-section article header{
   display: flex;
- flex-direction: row;
- justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 
 }
 .tweets-section article footer{
   display: flex;
- flex-direction: row;
- justify-content: space-between;
-border-top: solid;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: solid;
 }
 
 .tweets-section article:hover {
   box-shadow: 5px 5px;
-font-weight: 700;
-
+  font-weight: 700;
 }
+
 .tweets-section article:hover .account-name {
- display: inherit;
+  display: inherit;
 }
 
 .account-name{
@@ -46,4 +43,8 @@ font-weight: 700;
 
 footer div h6{
   margin: inherit;
+}
+
+article h5{
+ word-wrap: break-word;
 }

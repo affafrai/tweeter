@@ -32,16 +32,15 @@ $(document).ready(function () {
       "created_at": 1461113959088
     }
   ]
-  // wrap the xss
+  // wrap the xss function
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
-
+// createTweetElement function 
   const createTweetElement = function (obj) {
     const htmlSafeContent = escape(obj.content.text) ;  
-
     // adjusting the date
     const createdDay = new Date(obj.created_at).toString().slice(4, 21);
     //tweet implementing
@@ -72,34 +71,31 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   }
-
+// render tweet function 
   const renderTweets = function (tweetsData) {
-    // loops through tweets
     $('#tweets-container').empty();
-
+        // loops through tweets
     for (let tweetObj of tweetsData) {
       const tweet = createTweetElement(tweetObj);
       $('#tweets-container').prepend(tweet);
     }
   }
 
-
   $("#tweet-submit").submit(function (event) {
     // Stop form from submitting normally
     event.preventDefault();
+    // cashing error-msg
     const $error = $("#error-msg");
     // check if the tweet is not empty or null
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-      $error.show();
-      // alert("empty tweet");
+      $error.text("  your tweet is empty, please write something").show();
+    // check if the tweet longer than 140
     } else if ($("#tweet-text").val().length > 140) {
-     $error.show();
-      // alert("your tweet is more than 140 chars please make smaller");
-      $("#tweet-submit")[0].reset();
-      $(".counter").text(140).css( "color", "black" );
+     $error.text("  your tweet is too long").show();
+      // $("#tweet-submit")[0].reset();
+      // $(".counter").text(140).css("default");
     } else {
       $error.hide();
-
       console.log("test")
       $.ajax({
         method: "POST",
@@ -110,12 +106,9 @@ $(document).ready(function () {
         $(".counter").text(140).css( "color", "black" );
         loadTweets();
       })
-      console.log("testing form submition");
     }
   })
-    
- 
-
+    // load tweet function
 const loadTweets = function () {
   $.ajax({
     method: "GET",
@@ -123,11 +116,9 @@ const loadTweets = function () {
   }).then(function (result) {
     console.log(result);
     renderTweets(result);
-
   })
 }
 loadTweets();
-
 })
 
 
