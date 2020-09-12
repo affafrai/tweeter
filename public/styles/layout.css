@@ -29,8 +29,8 @@ body {
   font-family: sans-serif;
  }
  nav {
-  font-family: 'Bungee', cursive;
-padding: 50px ;
+  font-family: 'Bungee';
+  padding: 50px ;
  }
  body {
   font-family: 'Source Sans Pro';
@@ -64,13 +64,13 @@ padding: 50px ;
     flex-direction: row;
   }
   .main-header{
-      
-      width: 10%;
-      float: left;
-  margin: 90px;
+    width: 10%;
+    float: left;
+    margin: 90px;
   }
   .container{
     width: 90%;
     float: right;
+    padding: 25px
   }
 }

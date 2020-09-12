@@ -33,14 +33,14 @@ $(document).ready(function () {
     }
   ]
   // wrap the xss function
-  const escape =  function(str) {
+  const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
-// createTweetElement function 
+  // createTweetElement function 
   const createTweetElement = function (obj) {
-    const htmlSafeContent = escape(obj.content.text) ;  
+    const htmlSafeContent = escape(obj.content.text);
     // adjusting the date
     const createdDay = new Date(obj.created_at).toString().slice(4, 21);
     //tweet implementing
@@ -71,10 +71,10 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   }
-// render tweet function 
+  // render tweet function 
   const renderTweets = function (tweetsData) {
     $('#tweets-container').empty();
-        // loops through tweets
+    // loops through tweets
     for (let tweetObj of tweetsData) {
       const tweet = createTweetElement(tweetObj);
       $('#tweets-container').prepend(tweet);
@@ -89,11 +89,9 @@ $(document).ready(function () {
     // check if the tweet is not empty or null
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
       $error.text("  your tweet is empty, please write something").show();
-    // check if the tweet longer than 140
+      // check if the tweet longer than 140
     } else if ($("#tweet-text").val().length > 140) {
-     $error.text("  your tweet is too long").show();
-      // $("#tweet-submit")[0].reset();
-      // $(".counter").text(140).css("default");
+      $error.text("  your tweet is too long").show();
     } else {
       $error.hide();
       console.log("test")
@@ -103,22 +101,22 @@ $(document).ready(function () {
         data: $("#tweet-submit").serialize()
       }).then(function () {
         $("#tweet-submit")[0].reset();
-        $(".counter").text(140).css( "color", "black" );
+        $(".counter").text(140).css("color", "black");
         loadTweets();
       })
     }
   })
-    // load tweet function
-const loadTweets = function () {
-  $.ajax({
-    method: "GET",
-    url: "/tweets",
-  }).then(function (result) {
-    console.log(result);
-    renderTweets(result);
-  })
-}
-loadTweets();
+  // load tweet function
+  const loadTweets = function () {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    }).then(function (result) {
+      console.log(result);
+      renderTweets(result);
+    })
+  }
+  loadTweets();
 })
 
 
