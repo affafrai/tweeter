@@ -22,11 +22,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## screen shots
 
-!["screenshot of tweeter on desktop"] (https://github.com/affafrai/tweeter/blob/master/docs/tweeter-desktop.png?raw=true)
+!["screenshot of tweeter on desktop"](https://github.com/affafrai/tweeter/blob/master/docs/tweeter-desktop.png?raw=true)
 
-!["screenshot of tweeter mobile"] (https://github.com/affafrai/tweeter/blob/master/docs/tweetor-mobile.png?raw=true)
+!["screenshot of tweeter mobile"](https://github.com/affafrai/tweeter/blob/master/docs/tweetor-mobile.png?raw=true)
 
-!["screenshot of tweet compose box"] (https://github.com/affafrai/tweeter/blob/master/docs/tweet-box.png?raw=true)
+!["screenshot of tweet compose box"](https://github.com/affafrai/tweeter/blob/master/docs/tweet-box.png?raw=true)
 
-!["screenshot of tweets"] (https://github.com/affafrai/tweeter/blob/master/docs/tweet.png?raw=true)
+!["screenshot of tweets"](https://github.com/affafrai/tweeter/blob/master/docs/tweet.png?raw=true)
 
